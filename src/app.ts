@@ -9,11 +9,11 @@ import { errorHandler } from "./middleware/error.middleware";
 
 const main = async () => {
     const app = express();
-    app.listen(process.env.PORT);
+    app.listen(5173);
     app.use(errorHandler)
     scheduleGetReservation()
     createRouting(app)
-    console.log("Express application is up and running on port " + process.env.PORT);
+    console.log("Express application is up and running on port " + 5173);
     await appDatabase.initialize();
 };
 

@@ -2,10 +2,10 @@ import {DataSource} from "typeorm";
 
 export const appDatabase = new DataSource({
     type: 'mariadb',
-    host: process.env.DATABASE_URL,
+    host: 'localhost',
     port: Number(process.env.DATABASE_PORT),
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD,
+    username: 'root',
+    password: 'temp',
     database: 'boarding-pass',
     synchronize: true,
     entities: ['src/entity/*.ts'],

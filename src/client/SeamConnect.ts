@@ -1,13 +1,17 @@
 import Seam from 'seam';
 import axios, { AxiosResponse } from 'axios';
 
-const apiKey: string = process.env.SEAM_API_KEY;
-const seam = new Seam({ apiKey: apiKey })
+const apiKey: string = "seam_test2ZTo_0mEYQW2TvNDCxG5Atpj85Ffw";
+const seam = new Seam();
+
 
 export class SeamConnect {
 
     //create Connect Webview url seam call
     public async getDevicesData() {
+        console.log(process.env.SEAM_API_KEY)
+        const { workspace } = await seam.workspaces.get();
+        console.log(workspace);
         const createdConnectWebview = await seam.connectWebviews.create({
             custom_redirect_url: "http://localhost:3000/businessSettings",
             custom_redirect_failure_url: "http://localhost:3000/dashboard",
